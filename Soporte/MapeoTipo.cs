@@ -31,6 +31,7 @@ namespace Generation.Soporte
             , new MapeoTipo("float", "number", typeof(decimal), "0")
             , new MapeoTipo("numeric", "number", typeof(decimal), "0")
             , new MapeoTipo("uniqueidentifier", "string", typeof(Guid), "null")
+            , new MapeoTipo("varbinary", "string", typeof(byte[]), "null")
         };
 
         public static MapeoTipo[] Mapeos { get { return mapeos; } }

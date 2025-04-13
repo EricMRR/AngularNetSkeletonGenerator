@@ -6,22 +6,21 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Globalization;
 using static System.Net.Mime.MediaTypeNames;
 
-//string cadenaConexion = @"Server=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\CONADE\PEP\backend\pepDAL\Persistencia.mdf;Integrated Security=True;Connect Timeout=30;";
-string cadenaConexion = @"Data Source=10.10.0.144;Database=PEP;Integrated Security=false;User ID=develop;Password=AdC0n4d3.$;TrustServerCertificate=True;MultipleActiveResultSets=true;";
-string rutaDestinoClases = @"C:\CONADE\PEP\backend\pepModel\Transporte\";
-string rutaDestinoControladores = @"C:\CONADE\PEP\backend\pepAPI\Controllers\";
-string rutaDestinoContexto = @"C:\CONADE\PEP\backend\pepDAL\";
+//string cadenaConexion = @"Server=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Proyectos\Resultado\backend\pepDAL\Persistencia.mdf;Integrated Security=True;Connect Timeout=30;";
+string cadenaConexion = @"Data Source=ericmrr.pp.ua;Database=ericmr_chatito;Integrated Security=false;User ID=ericmr_chatito;Password=ninguna232323.;TrustServerCertificate=True;MultipleActiveResultSets=false;";
+string rutaDestinoClases = @"C:\Proyectos\Resultado\backend\model\Transporte\";
+string rutaDestinoControladores = @"C:\Proyectos\Resultado\backend\api\Controllers\";
+string rutaDestinoContexto = @"C:\Proyectos\Resultado\backend\dal\";
 
-string namespaceSolucion = @"pepAPI";
-string namespaceAPI = namespaceSolucion + @".Controllers";
-string namespaceTransporte = @"pepModel.Transporte";
-string namespaceWrapperAPI = @"pepModel.Solucion";
-string namespaceAccesoDatos = @"pepDAL";
+string namespaceSolucion = @"ChatApp";
+string namespaceTransporte = @"ChatAppModels.Transporte";
+string namespaceWrapperAPI = @"ChatAppModels.Solucion";
+string namespaceAccesoDatos = @"ChatAppDAL";
 
-string rutaAppAngular = @"C:\CONADE\PEP\WebApplicationFront\src\app\";
-string rutaModelosAngular = @"C:\CONADE\PEP\WebApplicationFront\src\app\models\";
-string rutaServiciosAngular = @"C:\CONADE\PEP\WebApplicationFront\src\app\services\";
-string rutaComponentesAngular = @"C:\CONADE\PEP\WebApplicationFront\src\app\components\";
+string rutaAppAngular = @"C:\Proyectos\Resultado\frontend\src\app\";
+string rutaModelosAngular = @"C:\Proyectos\Resultado\frontend\src\app\models\";
+string rutaServiciosAngular = @"C:\Proyectos\Resultado\frontend\src\app\services\";
+string rutaComponentesAngular = @"C:\Proyectos\Resultado\frontend\src\app\components\";
 string apiURL = @"https://localhost:7175/";
 
 string key = null;
@@ -176,7 +175,7 @@ for (int i = 0; i < tablas.Length; i++) {
     System.IO.File.WriteAllText(rutaDestinoClases + tabla.name + ".cs", tabla.ToString());
 
     Console.WriteLine("Escribiendo controlador de transporte tabla: " + tabla.name);
-    Controlador cont = new Controlador(tabla, namespaceSolucion, namespaceAPI, namespaceTransporte, namespaceWrapperAPI, namespaceAccesoDatos, camposExcluir);
+    Controlador cont = new Controlador(tabla, namespaceSolucion, namespaceSolucion, namespaceTransporte, namespaceWrapperAPI, namespaceAccesoDatos, camposExcluir);
     System.IO.File.WriteAllText(rutaDestinoControladores + tabla.name + "Controller.cs", cont.ToString());
 }
 

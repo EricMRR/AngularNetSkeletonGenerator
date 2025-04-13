@@ -131,7 +131,7 @@ using System.Text.Json.Serialization;
 using " + namespaceSolucion + @".Authentication;
 using " + namespaceSolucion + @".Utils;
 
-namespace " + namespaceAPI + @"
+namespace " + namespaceAPI + @".Controllers
 {
     [ApiController]
     [Route(""[controller]"")]
